@@ -2,12 +2,12 @@
 import inquirer from "inquirer";
 const answer = await inquirer.prompt([
     {
-        message: "Enter first number",
+        message: "Enter first number =",
         type: "number",
         name: "firstNumber",
     },
     {
-        message: "Enter second number",
+        message: "Enter second number =",
         type: "number",
         name: "secondNumber",
     },
@@ -16,23 +16,27 @@ const answer = await inquirer.prompt([
         type: "list",
         name: "operator",
         choices: [
-            "Addition",
-            "Subtraction",
-            "Multiplication",
-            "Division",
+            "1 - Addition (+)",
+            "2 - Subtraction (-)",
+            "3 - Multiplication (*)",
+            "4 - Division (/)",
+            "5 - Percentage (%)",
         ],
     },
 ]);
 // condition statement
-if (answer.operator === "Addition") {
+if (answer.operator === "1 - Addition (+)") {
     console.log("Your answer is =", answer.firstNumber + answer.secondNumber);
 }
-else if (answer.operator === "Subtraction") {
+else if (answer.operator === "2 - Subtraction (-)") {
     console.log("Your answer is =", answer.firstNumber - answer.secondNumber);
 }
-else if (answer.operator === "Multiplication") {
+else if (answer.operator === "3 - Multiplication (*)") {
     console.log("Your answer is =", answer.firstNumber * answer.secondNumber);
 }
-else if (answer.operator === "Division") {
+else if (answer.operator === "4 - Division (/)") {
     console.log("Your answer is =", answer.firstNumber / answer.secondNumber);
+}
+else if (answer.operator === "5 - Percentage (%)") {
+    console.log("Your answer is =", answer.firstNumber % answer.secondNumber);
 }
